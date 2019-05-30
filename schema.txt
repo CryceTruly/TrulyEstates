@@ -1,0 +1,50 @@
+#MODELS/DBFIELDS
+
+
+##LISTINGS
+id: INT
+realtor INT(FOREIGN KEY [realtor])
+title:STRING
+address:STRING
+city:STRING
+zipcode:STRING
+description:TEXT
+price:INT
+bedrooms:INT
+bathrooms:INT
+garage:INT
+list_date:DATE
+sqft:INT
+lot_size:FLOAT
+is_published:BOOL [TRUE]
+photo_main:STRING
+photo1:STRING
+photo2:STRING
+photo3:STRING
+photo4:STRING
+photo5:STRING
+photo6:STRING
+
+
+###REALTOR
+
+id:STRING
+name:STRING
+photo:STRING
+description:TEXT
+email:STRING
+phone:STRING
+is_mvp:BOOLEAN [0]
+hire_date:DATE
+
+
+
+###CONTACTS
+id:INT
+user_id:INT
+listing_id:INT
+name: STRING
+email:STRING
+phone:STRING
+message:TEXT
+contact_date:DATE

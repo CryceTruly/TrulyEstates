@@ -1,6 +1,4 @@
-{% extends 'base.html'%}
-{% block content%}
-{% load humanize %}
+{% extends 'base.html'%} {% block content%} {% load humanize %}
 <section id="showcase-inner" class="py-5 text-white">
   <div class="container">
     <div class="row text-center">
@@ -42,9 +40,8 @@
           <div class="card-img-overlay">
             <h2>
               <span class="badge badge-secondary text-white">
-
-                {{ listing.price|intcomma }}
-         </span>
+                {{ listing.price | intcomma }}
+              </span>
             </h2>
           </div>
           <div class="card-body">
@@ -85,7 +82,7 @@
             </div>
             <hr />
             <a
-              href="{% url 'listing' listing.id%"
+              href="{% url 'listing' listing.id %}"
               class="btn btn-primary btn-block"
               >More Info</a
             >

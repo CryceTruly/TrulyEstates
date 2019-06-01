@@ -7,6 +7,7 @@ from django.contrib import auth
 
 def register(request):
     if request.method == "POST":
+        context = {"values": request.POST}
         first_name = request.POST['first_name']
         last_name = request.POST['last_name']
         username = request.POST['username']
@@ -18,13 +19,16 @@ def register(request):
             # check username
             if User.objects.filter(username=username).exists():
                 messages.error(request, 'That username is taken')
-                return redirect('register')
+                return render(request, "accounts/register.html", context)
+
             # check usernemailame
             if User.objects.filter(email=email).exists():
                 messages.error(request, 'That email is taken')
-                return redirect('register')
+                return render(request, "accounts/register.html", context)
+
             user = User.objects.create_user(
-                username=username, password=password, email=email, first_name=first_name, last_name=last_name)
+                username=username, password=password, email=email,
+                first_name=first_name, last_name=last_name)
             # auth.login(user, request)
             # messages.success(request, 'You are now registered and logged in')
             # return redirect('')
@@ -36,17 +40,19 @@ def register(request):
 
         else:
             messages.error(request, 'Passwords do not match')
-            return redirect('register')
+            return render(request, "accounts/register.html", context)
+
     values = request.POST
     context = {
         "values": values
     }
-    
+
     return render(request, "accounts/register.html", context)
 
 
 def login(request):
     if request.method == "POST":
+        context = {"values": request.POST}
         username = request.POST['username']
         password = request.POST['password']
         user = auth.authenticate(username=username, password=password)
@@ -54,14 +60,11 @@ def login(request):
             auth.login(request, user)
             messages.success(request,  'You are now logged in')
             return redirect('dashboard')
-        messages.error(request,  '  invalid creadentials')
-        return redirect('login')
+        messages.error(request,  'Invalid credentials')
+        return render(request, 'accounts/login.html',
+                      context)
 
-    values = request.POST
-    context = {
-        "values": values
-    }
-    return render(request, "accounts/login.html", context)
+    return render(request, "accounts/login.html")
 
 
 def logout(request):

@@ -10,7 +10,7 @@
           </div>
           <div class="card-body">
             {% include 'partials/_alerts.html'%}
-            <form action="{%url 'login'%}" method="POST">
+            <form action="{%url 'login'%}" method="POST" autocomplete="off">
               {% csrf_token%}
               <div class="form-group">
                 <label for="username">Username</label>
@@ -29,7 +29,6 @@
                   type="password"
                   name="password"
                   class="form-control"
-                  
                   required
                 />
               </div>

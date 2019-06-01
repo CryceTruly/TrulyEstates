@@ -12,7 +12,7 @@
           <div class="card-body">
             <!-- Alerts -->
             {% include 'partials/_alerts.html'%}
-            <form action="{%url 'register'%}" method="POST">
+            <form action="{%url 'register'%}" method="POST" autocomplete="off">
               {% csrf_token%}
               <div class="form-group">
                 <label for="first_name">First Name</label>

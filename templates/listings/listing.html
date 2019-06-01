@@ -1,5 +1,5 @@
-{%extends 'base.html'%} {%load static%} {%load humanize%} {%block content%}
-
+{%extends 'base.html'%} {%load static%} {%load humanize%} {%block content%} {%
+block title%} | {{ listing.title }} {%endblock%}
 <section id="showcase-inner" class="py-5 text-white">
   <div class="container">
     <div class="row text-center">
@@ -77,16 +77,16 @@
           <div class="col-md-2">
             {%if listing.photo5%}
             <a href="{{ listing.photo5.url }}" data-lightbox="home-images">
-                    <img src="{{ listing.photo5.url }}" alt="" class="img-fluid" />
-                  </a>
+              <img src="{{ listing.photo5.url }}" alt="" class="img-fluid" />
+            </a>
 
             {%endif%}
           </div>
           <div class="col-md-2">
             {%if listing.photo6%}
             <a href="{{ listing.photo6.url }}" data-lightbox="home-images">
-                    <img src="{{ listing.photo6.url }}" alt="" class="img-fluid" />
-                  </a>
+              <img src="{{ listing.photo6.url }}" alt="" class="img-fluid" />
+            </a>
             {%endif%}
           </div>
         </div>
@@ -96,19 +96,19 @@
             <ul class="list-group list-group-flush">
               <li class="list-group-item text-secondary">
                 <i class="fas fa-money-bill-alt"></i> Asking Price:
-                <span class="float-right">{{listing.price|intcomma}}</span>
+                <span class="float-right">{{ listing.price | intcomma }}</span>
               </li>
               <li class="list-group-item text-secondary">
                 <i class="fas fa-bed"></i> Bedrooms:
-                <span class="float-right">{{listing.bedrooms}}</span>
+                <span class="float-right">{{ listing.bedrooms }}</span>
               </li>
               <li class="list-group-item text-secondary">
                 <i class="fas fa-bath"></i> Bathrooms:
-                <span class="float-right">{{listing.bathrooms}}</span>
+                <span class="float-right">{{ listing.bathrooms }}</span>
               </li>
               <li class="list-group-item text-secondary">
                 <i class="fas fa-car"></i> Garage:
-                <span class="float-right">{{listing.garage}} </span>
+                <span class="float-right">{{ listing.garage }} </span>
               </li>
             </ul>
           </div>
@@ -116,19 +116,19 @@
             <ul class="list-group list-group-flush">
               <li class="list-group-item text-secondary">
                 <i class="fas fa-th-large"></i> Square Feet:
-                <span class="float-right">{{listing.sqft}}</span>
+                <span class="float-right">{{ listing.sqft }}</span>
               </li>
               <li class="list-group-item text-secondary">
                 <i class="fas fa-square"></i> Lot Size:
-                <span class="float-right">{{listing.lot_size}}</span>
+                <span class="float-right">{{ listing.lot_size }}</span>
               </li>
               <li class="list-group-item text-secondary">
                 <i class="fas fa-calendar"></i> Listing Date:
-                <span class="float-right">{{listing.list_date}}</span>
+                <span class="float-right">{{ listing.list_date }}</span>
               </li>
               <li class="list-group-item text-secondary">
                 <i class="fas fa-bed"></i> Realtor:
-                <span class="float-right">{{listing.realtor}} </span>
+                <span class="float-right">{{ listing.realtor }} </span>
               </li>
             </ul>
           </div>
@@ -136,20 +136,19 @@
 
         <!-- Description -->
         <div class="row mb-5">
-          <div class="col-md-12">{{listing.description}}
-          </div>
+          <div class="col-md-12">{{ listing.description }}</div>
         </div>
       </div>
       <div class="col-md-3">
         <div class="card mb-3">
           <img
             class="card-img-top"
-            src="{{listing.realtor.photo.url}}"
+            src="{{ listing.realtor.photo.url }}"
             alt="Seller of the month"
           />
           <div class="card-body">
             <h5 class="card-title">Property Realtor</h5>
-            <h6 class="text-secondary">{{listing.realtor}}</h6>
+            <h6 class="text-secondary">{{ listing.realtor }}</h6>
           </div>
         </div>
         <button

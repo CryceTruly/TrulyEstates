@@ -16,7 +16,7 @@
     <!-- LightBox -->
     <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %} " />
 
-    <title>Truly Estate</title>
+    <title>Truly Estate {% block title%} {%endblock%}</title>
   </head>
   <body>
     {% include 'partials/_topbar.html'%} {% include 'partials/_navbar.html'%}

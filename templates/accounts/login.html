@@ -1,6 +1,5 @@
-{% extends 'base.html' %} {% load static%}
-{%block title%} |
-Login to Account {%endblock%} {%block content%}
+{% extends 'base.html' %} {% load static%} {%block title%} | Login to Account
+{%endblock%} {%block content%}
 <section id="login" class="bg-light py-5">
   <div class="container">
     <div class="row">
@@ -11,7 +10,7 @@ Login to Account {%endblock%} {%block content%}
           </div>
           <div class="card-body">
             {% include 'partials/_alerts.html'%}
-            <form action="{%url 'login'%}" method="POST">
+            <form action="{%url 'login'%}" method="POST" autocomplete="off">
               {% csrf_token%}
               <div class="form-group">
                 <label for="username">Username</label>
@@ -20,6 +19,7 @@ Login to Account {%endblock%} {%block content%}
                   name="username"
                   class="form-control"
                   required
+                  value="{{ values.username }}"
                 />
               </div>
 

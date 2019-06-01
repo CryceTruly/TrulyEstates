@@ -10,7 +10,7 @@
           </div>
           <div class="card-body">
             <form action="{%url 'login'%}" method="POST">
-              {% csrf_token%}
+              {% include 'partials/_alerts.html'%} {% csrf_token%}
               <div class="form-group">
                 <label for="username">Username</label>
                 <input

@@ -1,6 +1,5 @@
-{% extends 'base.html' %} {% load static%}
-{%block title%} |
-Login to Account {%endblock%} {%block content%}
+{% extends 'base.html' %} {% load static%} {%block title%} | Login to Account
+{%endblock%} {%block content%}
 <section id="login" class="bg-light py-5">
   <div class="container">
     <div class="row">
@@ -20,6 +19,7 @@ Login to Account {%endblock%} {%block content%}
                   name="username"
                   class="form-control"
                   required
+                  value="{{ values.username }}"
                 />
               </div>
 
@@ -29,6 +29,7 @@ Login to Account {%endblock%} {%block content%}
                   type="password"
                   name="password"
                   class="form-control"
+                  
                   required
                 />
               </div>

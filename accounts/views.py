@@ -37,7 +37,12 @@ def register(request):
         else:
             messages.error(request, 'Passwords do not match')
             return redirect('register')
-    return render(request, "accounts/register.html")
+    values = request.POST
+    context = {
+        "values": values
+    }
+    
+    return render(request, "accounts/register.html", context)
 
 
 def login(request):
@@ -51,7 +56,12 @@ def login(request):
             return redirect('dashboard')
         messages.error(request,  '  invalid creadentials')
         return redirect('login')
-    return render(request, "accounts/login.html")
+
+    values = request.POST
+    context = {
+        "values": values
+    }
+    return render(request, "accounts/login.html", context)
 
 
 def logout(request):

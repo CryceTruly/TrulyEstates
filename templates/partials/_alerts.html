@@ -4,7 +4,7 @@
     class="alert alert-{{ message.tags }} alert-dismissible fade show"
     role="alert"
   >
-    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}{% endif %}
     {{ message }}
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>

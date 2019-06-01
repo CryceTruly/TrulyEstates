@@ -12,7 +12,7 @@ def register(request):
 
 def login(request):
     if request.method == "POST":
-        messages.error(request, 'Tseting errros')
+        messages.add_message(request, messages.INFO, 'Hello world.')
         return redirect('login')
     return render(request, "accounts/login.html")
 

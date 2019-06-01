@@ -7,7 +7,3 @@ setTimeout(() => {
 setTimeout(function() {
   $(".messages").fadeOut("slow");
 }, 3000);
-
-document.ready(function() {
-  console.log("App connected to JS");
-});

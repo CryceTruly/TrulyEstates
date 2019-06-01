@@ -4,10 +4,14 @@ from django.shortcuts import render, redirect
 
 
 def register(request):
+    if request.method == "POST":
+        pass
     return render(request, "accounts/register.html")
 
 
 def login(request):
+    if request.method == "POST":
+        pass
     return render(request, "accounts/login.html")
 
 

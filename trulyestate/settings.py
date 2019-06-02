@@ -137,6 +137,13 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
 
+
+# email stuff
+EMAIL_HOST = os.environ.get('EMAIL_HOST ')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 django_heroku.settings(locals())

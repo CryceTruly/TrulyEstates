@@ -12,8 +12,23 @@ env:
 install:
   - pip install -r requirements.txt
 
+env:
+  global:
+    -   CC_TEST_REPORTER_ID=029b4c353edc78b8e3158a94b59028741bbb9630daf75afa3b19c238464ce0b0
+before_script:
+  - export CC_TEST_REPORTER_ID=029b4c353edc78b8e3158a94b59028741bbb9630daf75afa3b19c238464ce0b0
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 script:
-  - python manage.py test
+  - python manage.py test --verbosity=2
+
+  # run tests with coverage
+
+  - coverage run --source='contacts/,listings/,accounts/,pages/,realtors/' manage.py test && coverage report
 
 after_success:
   - coveralls
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

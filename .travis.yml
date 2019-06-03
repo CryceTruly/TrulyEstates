@@ -13,7 +13,11 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - python manage.py test
+  - python manage.py test --verbosity=2
+
+  # run tests with coverage
+
+  - coverage run --source='contacts/,listings/,accounts/,pages/,realtors/' manage.py test && coverage report
 
 after_success:
   - coveralls

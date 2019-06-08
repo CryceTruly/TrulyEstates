@@ -1,16 +1,15 @@
 {% extends 'base.html'%}{% load static %}
 {% block title%}
 | About us {%endblock%}
-{% block content %} 
+{% block content %}
 <!-- Top Bar -->
 <section id="showcase-inner" class="py-5 text-white">
   <div class="container">
     <div class="row text-center">
       <div class="col-md-12">
-        <h1 class="display-4">About BT Real Estate</h1>
+        <h1 class="display-4">About Truly Estates</h1>
         <p class="lead">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt,
-          pariatur!
+         We help you aquire a home in a simple and convinient manner
         </p>
       </div>
     </div>
@@ -23,7 +22,7 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html"> <i class="fas fa-home"></i> Home</a>
+          <a href="{% url 'index'%}"> <i class="fas fa-home"></i> Home</a>
         </li>
         <li class="breadcrumb-item active">About</li>
       </ol>
@@ -37,16 +36,18 @@
       <div class="col-md-8">
         <h2>We Search For The Perfect Home</h2>
         <p class="lead">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt,
-          pariatur!
+
+            We help you aquire a home in a simple and convinient manner
+
+         We help you aquire a home in a simple and convinient manner
         </p>
         <img src="{% static 'img/about.jpg' %}" alt="" />
         <p class="mt-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
-          esse officia repudiandae ad saepe ex, amet neque quod accusamus rem
-          quia magnam magni dolorum facilis ullam minima perferendis?
-          Exercitationem at quaerat commodi id libero eveniet harum perferendis
-          laborum molestias quia.
+
+            We help you aquire a home in a simple and convinient manner
+            We help you aquire a home in a simple and convinient manner
+            We help you aquire a home in a simple and convinient manner
+            We help you aquire a home in a simple and convinient manner
         </p>
       </div>
       <div class="col-md-4">
@@ -84,8 +85,9 @@
 <section id="work" class="bg-dark text-white text-center">
   <h2 class="display-4">We Work For You</h2>
   <h4>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem velit
-    aperiam, unde aliquid at similique!
+
+      We help you aquire a home in a simple and convinient manner
+      We help you aquire a home in a simple and convinient manner
   </h4>
   <hr />
   <a href="listings.html" class="btn btn-secondary text-white btn-lg"
@@ -103,9 +105,9 @@
 
 <div class="col-md-4">
     <img
-      src="{{realtor.photo.url}}"
+      src="{{realtor.photo.url}}" height="500"
       alt=""
-      class="rounded-circle mb-3"
+      class="rounded mb-3"
     />
     <h4>{{realtor.name}}</h4>
     <p class="text-success">
@@ -129,5 +131,5 @@
 
   </div>
 </section>
-
+{% include 'partials/_footer.html'%}
 {% endblock%}

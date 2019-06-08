@@ -120,24 +120,19 @@
           <li class="page-litem disabled">
             <a class="page-link">&laquo;</a>
           </li>
-          {% endif %}
-          {% for i in listings.paginator.page_range %}
+          {% endif %} {% for i in listings.paginator.page_range %} {% if
+          listings.number == i %}
 
-            {% if listings.number == i %}
+          <li class="page-item active">
+            <a class="page-link">{{ i }}</a>
+          </li>
+          {% else %}
 
-              <li class="page-item active">
-                <a class="page-link">{{ i }}</a>
-              </li>
-            {% else %}
+          <li class="page-item">
+            <a href="?page={{ i }}" class="page-link">{{ i }}</a>
+          </li>
 
-              <li class="page-item">
-                <a href="?page={{i}}" class="page-link">{{i}}</a>
-              </li>
-
-            {% endif %}
-
-          {% endfor %}
-          {%if listings.has_next%}
+          {% endif %} {% endfor %} {%if listings.has_next%}
 
           <li class="page-item">
             <a
@@ -162,5 +157,4 @@
     </div>
   </div>
 </section>
-{% include 'partials/_footer.html'%}
-{% endblock %}
+{% include 'partials/_footer.html'%} {% endblock %}

@@ -31,12 +31,13 @@
 <section id="listings" class="py-4">
   <div class="container">
     <div class="row">
-      {% if listings %} {% for listing in listings%}
+      {% if listings %}
+      {% for listing in listings%}
 
       <!-- Listing 1 -->
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="card listing-preview">
-          <img class="card-img-top" src="{{ listing.photo_main.url }}" alt="" />
+          <img class="card-img-top" src="{{listing.photo_main.url}}" alt="" />
           <div class="card-img-overlay">
             <h2>
               <span class="badge badge-secondary text-white">
@@ -90,7 +91,8 @@
         </div>
       </div>
 
-      {% endfor %} {%else %}
+      {% endfor %}
+      {%else %}
       <div class="col-md-12">
         <p>No Listings Available</p>
       </div>
@@ -120,8 +122,9 @@
           <li class="page-litem disabled">
             <a class="page-link">&laquo;</a>
           </li>
-          {% endif %} {% for i in listings.paginator.page_range %} {% if
-          listings.number == i %}
+          {% endif %}
+          {% for i in listings.paginator.page_range %}
+          {% if listings.number == i %}
 
           <li class="page-item active">
             <a class="page-link">{{ i }}</a>
@@ -132,8 +135,10 @@
             <a href="?page={{ i }}" class="page-link">{{ i }}</a>
           </li>
 
-          {% endif %} {% endfor %} {%if listings.has_next%}
+          {% endif %}
+          {% endfor %}
 
+          {%if listings.has_next%}
           <li class="page-item">
             <a
               class="page-link"
@@ -157,4 +162,4 @@
     </div>
   </div>
 </section>
-{% include 'partials/_footer.html'%} {% endblock %}
+{% endblock %}

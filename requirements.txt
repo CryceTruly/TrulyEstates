@@ -29,7 +29,7 @@ pyflakes==1.6.0
 pylint==2.1.1
 pylint-celery==0.3
 pylint-django==2.0.2
-pylint-flask==0.5
+pylint-flask==0.6
 pylint-plugin-utils==0.5
 pytz==2019.1
 PyYAML==5.1

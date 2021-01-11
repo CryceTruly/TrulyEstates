@@ -28,7 +28,7 @@ pydocstyle==3.0.0
 pyflakes==1.6.0
 pylint==2.1.1
 pylint-celery==0.3
-pylint-django==2.0.2
+pylint-django==2.4.2
 pylint-flask==0.5
 pylint-plugin-utils==0.5
 pytz==2019.1

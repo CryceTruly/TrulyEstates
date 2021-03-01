@@ -1,4 +1,4 @@
-astroid==2.0.4
+astroid==2.5.1
 autopep8==1.4.4
 certifi==2019.3.9
 chardet==3.0.4

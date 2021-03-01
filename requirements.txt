@@ -26,7 +26,7 @@ psycopg2-binary==2.8.2
 pycodestyle==2.5.0
 pydocstyle==3.0.0
 pyflakes==1.6.0
-pylint==2.1.1
+pylint==2.7.2
 pylint-celery==0.3
 pylint-django==2.0.2
 pylint-flask==0.5
